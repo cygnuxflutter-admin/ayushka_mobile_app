@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9eb9675-62f9-440e-b5a8-0e9e3c99acae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/cow_screen/cow_details/cow_details_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cow_screen/cow_details/cow_details_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/cow_screen/cow_details/edit_cow_details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/cow_screen/cow_details/edit_cow_details_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/medical_report_screen/models/medicine_History_ByCowID_Response.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/medical_report_screen/models/medicine_History_ByCowID_Response.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +45,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ravi&quot;,
     &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
