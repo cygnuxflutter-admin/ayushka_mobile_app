@@ -231,7 +231,7 @@ class MilkController extends GetxController {
     } else {
       print("*******************statusCode***********************");
       print(response.statusCode);
-      CattleToast.msg(response.statusMessage!);
+      CattleToast.msg(response.statusMessage ?? "Error");
       print("*******************statusCode***********************");
       changeStatus(DataStatusE.error);
     }
@@ -266,7 +266,7 @@ class MilkController extends GetxController {
       } else {
         print("*******************statusCode***********************");
         print(response.statusCode);
-        CattleToast.msg(response.statusMessage!);
+        CattleToast.msg(response.statusMessage ?? "Error");
         print("*******************statusCode***********************");
         changeStatus(DataStatusE.error);
       }
@@ -296,7 +296,7 @@ class MilkController extends GetxController {
     return formattedDate;
   }
 
-  Future<void> CowMilkReport() async {
+  Future<void> cowMilkReport() async {
     cowsMilkData.clear();
     cowsSummaryData.clear();
     pendingCowData.clear();
@@ -316,11 +316,12 @@ class MilkController extends GetxController {
       ),
       token: PrefUtils.getToken.toString(),
     );
-    try {
-      if (response.statusCode == 200) {
-        AppLoader().hide();
-        MilkReportResponse milkReportResponse = milkReportResponseFromJson(response.data);
-        milkReportResponse.milkReportData.milkData.sort((a, b) {
+    // try {
+    if (response.statusCode == 200) {
+      AppLoader().hide();
+      MilkReportResponse milkReportResponse = milkReportResponseFromJson(response.data);
+      if (milkReportResponse.milkReportData != null) {
+        milkReportResponse.milkReportData!.milkData.sort((a, b) {
           final idA = a.cowTagId;
           final idB = b.cowTagId;
           final intA = int.tryParse(idA) ?? double.infinity;
@@ -334,21 +335,22 @@ class MilkController extends GetxController {
             return intA == double.infinity ? 1 : -1; // One is int and the other is string
           }
         });
-        cowsMilkData.addAll(milkReportResponse.milkReportData.milkData);
-        cowsSummaryData.addAll(milkReportResponse.milkReportData.summaryData);
-        pendingCowData.addAll(milkReportResponse.milkReportData.pendingCows);
+        cowsMilkData.addAll(milkReportResponse.milkReportData!.milkData);
+        cowsSummaryData.addAll(milkReportResponse.milkReportData!.summaryData);
+        pendingCowData.addAll(milkReportResponse.milkReportData!.pendingCows);
         checkAddData();
-        CattleToast.msg(milkReportResponse.message);
-      } else {
-        AppLoader().hide();
-        print(response.statusCode);
-        CattleToast.msg(response.statusMessage!);
       }
-    } catch (error) {
+      CattleToast.msg(milkReportResponse.message);
+    } else {
       AppLoader().hide();
-      print(error);
-      CattleToast.msg(error.toString());
+      print(response.statusCode);
+      CattleToast.msg(response.statusMessage ?? "Error");
     }
+    // } catch (error) {
+    //   AppLoader().hide();
+    //   print(error);
+    //   CattleToast.msg(error.toString());
+    // }
   }
 
   void checkAddData() {
